@@ -1,14 +1,14 @@
-1. creare progetto laravel sul pc
-2. creare repo vuota
-3. collegare repo con progetto
-4. mi sposto con il temrinale dentro la cartella di lavoro
+1. Creare progetto laravel sul pc
+2. Creare repo vuota
+3. Collegare repo con progetto
+4. Mi sposto con il temrinale dentro la cartella di lavoro
 5. Pulisco la cache di npm se ci sono errori: ```npm cache clear --force```
-6. lancio il comando ```npm i```
-7. creare un nuovo DB
+6. Lancio il comando ```npm i```
+7. Creare un nuovo DB
 8. Collegare il DB tramite il file .env
 9. Riavviare il server con ```php artisan serve```
 10. Creare 2 cartelle nella cartella views per separare frontend da backend
-11. modificare il percorso delle rotte in web.php e homeController
+11. Modificare il percorso delle rotte in web.php e homeController
 12. Modificare il file RouteServiceProvider con il path della nuova pagina di atterraggio dopo il Login
 13. Eliminare il file homeCOntroller di default
 14. Ricraere l'homeController con il terminale nella cartella Admin per separare frontend da backend nei controlli:
@@ -77,9 +77,9 @@ Route::middleware('auth')
 ```
 28. Creato il file per la show nelle view strutturandone l'aspetto
 29. creato bottone per la create nella index
-30. impostato la funzione di create nelle CRUD
+30. Impostato la funzione di create nelle CRUD
 31. Inserito nuovo file create.blade.php nella view con all'interno il form per creare il nuovo book
-32. IMpostata la funzione di create e store
+32. Impostata la funzione di create e store
 ```
     public function create()
     {
@@ -98,8 +98,8 @@ Route::middleware('auth')
         return redirect()->route('admin.books.index')->with('message', "Hai creato il nuovo libbro $book->title");
     }
 ```
-33. imposta la edit insieme al bottone nella index per ottenere la pagina con il form di modifica
-34. impostato la funzione update nelle CRUD
+33. Imposta la edit insieme al bottone nella index per ottenere la pagina con il form di modifica
+34. Impostato la funzione update nelle CRUD
 ```
 
         public function edit(Book $book)
