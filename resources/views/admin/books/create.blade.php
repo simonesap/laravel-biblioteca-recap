@@ -27,6 +27,23 @@
             </textarea>
         </div>
 
+        <div>
+            <label for="generi">Genre</label>
+            @forelse ($genre as $gen )
+            <div>
+                <label for="generi">{{$gen->generi}}</label>
+                <input type="checkbox"
+                    class=""
+                    id="generi" name="generi"
+                    value="{{$gen->generi_id}}" class="" width="50px;">
+                @empty
+                    <h2>Null</h2>
+                @endforelse
+            </div>
+
+
+        </div>
+
         <button type="submit" class="btn btn-primary">Crea</button>
     </form>
 </div>

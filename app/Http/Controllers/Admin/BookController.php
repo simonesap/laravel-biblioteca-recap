@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Book;
+use App\Models\Generi;
 
 class BookController extends Controller
 {
@@ -27,7 +28,10 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('admin.books.create');
+
+        $genre = Generi::all();
+
+        return view('admin.books.create', compact('genre'));
     }
 
     /**
@@ -40,11 +44,13 @@ class BookController extends Controller
     {
         $data = $request->All();
 
-        $book = new Book();
+        $book = Book::all();
+        $genre = Generi::all();
         $book->fill($data);
+        $book->generi()->sync([]);
         $book->save();
 
-        return redirect()->route('admin.books.index')->with('message', "Hai creato il nuovo libbro $book->title");
+        return redirect()->route('admin.books.index', compact('book'))->with('message', "Hai creato il nuovo libbro $book->title");
     }
 
     /**

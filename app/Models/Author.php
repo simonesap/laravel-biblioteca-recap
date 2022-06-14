@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Mdoels\Book;
+
 class Author extends Model
 {
     public function books(){

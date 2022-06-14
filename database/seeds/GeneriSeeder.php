@@ -13,7 +13,7 @@ class GeneriSeeder extends Seeder
     public function run()
     {
 
-        $generis = [
+        $generies = [
             [
                 'genere'=>'horror',
             ],
@@ -23,7 +23,7 @@ class GeneriSeeder extends Seeder
 
         ];
 
-        foreach($generis as $gener){
+        foreach($generies as $gener){
             $new_generi = new Generi();
             $new_generi->generi = $gener['genere'];
             $new_generi->save();
